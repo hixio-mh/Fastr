@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <fast-design-system-provider use-defaults>
+      <div class="wrapper">
+        <!-- header:start -->
+        <header class="header">
+          <fast-anchor href="#" appearance="lightweight">Logo</fast-anchor>
+          <div class="header-link-group">
+            <fast-anchor href="#" appearance="lightweight">Component</fast-anchor>
+            <fast-anchor href="#" appearance="lightweight">Integration</fast-anchor>
+            <fast-anchor href="#" appearance="lightweight">Documentation</fast-anchor>
+            <fast-anchor href="#" appearance="lightweight">Community</fast-anchor>
+          </div>
+          <fast-anchor href="#" appearance="lightweight">Github</fast-anchor>
+        </header>
+        <!-- header:end -->
+
+        <!-- hero-section:start -->
+        <section class="section">
+          <div class="section-content">
+            <fast-section-header>
+              <fast-badge slot="badge" class="section-badge">ADAPTIVE UI SYSTEM, UTILITIES, & TOOLS</fast-badge>
+              <p class="section-heading-hero">The adaptive interface system for modern web experiences</p>
+              <p slot="body">Interfaces bult with FAST adapt to your design system and can be used with any modern UI Framework by leveraging industry standard Web Components.</p>
+              <fast-button slot="action" appearance="outline">Get start</fast-button>
+            </fast-section-header>
+          </div>
+        </section>
+        <!-- hero-section:end -->
+
+        <section class="section">
+          <div class="section-content">
+            <fast-section-header>
+              <fast-badge slot="badge" class="section-badge">FLEXIBLE AND ADAPTABLE</fast-badge>
+              <p class="section-heading">One component, many faces</p>
+              <p slot="body">Using an unopinionated architecture and Adaptive Styling, one suite of components can blend into any environment.</p>
+              <fast-button slot="action" appearance="outline">Explore components</fast-button>
+            </fast-section-header>
+          </div>
+        </section>
+
+        <!-- adaptive-ui-system:start -->
+        <section class="section">
+          <fast-frame></fast-frame>
+        </section>
+        <!-- adaptive-ui-system:end -->
+
+        <section class="section">
+          <div class="section-content">
+            <fast-section-header>
+              <fast-badge slot="badge" class="section-badge">FULLY INTEGRATED</fast-badge>
+              <p class="section-heading">Works with existing frameworks</p>
+              <fast-button slot="action" appearance="outline">Learn more</fast-button>
+            </fast-section-header>
+          </div>
+        </section>
+
+        <!-- frameworks:start -->
+        <section class="section">
+          <div class="section-component">
+            Framework components
+          </div>
+        </section>
+        <!-- frameworks:end -->
+
+        <section class="section">
+          <div class="section-content">
+            <fast-section-header>
+              <fast-badge slot="badge" class="section-badge">A COMPREHENSIVE TOOLKIT</fast-badge>
+              <p class="section-heading">Feature and Utilities</p>
+              <fast-button slot="action" appearance="outline">Read documentation</fast-button>
+            </fast-section-header>
+          </div>
+        </section>
+
+                <!-- documentation:start -->
+                <section class="section">
+									<div class="section-component features">
+											<card-section>
+													<x-card>
+															<h5 slot="header">01</h5>
+															<h4 slot="header">Composition</h4>
+															<p>Create new component compositions by nesting, styling base components, and passing unhandled props. The combinations are endless.</p>
+															<fast-anchor
+																	slot="links"
+																	class="link"
+																	href="#"
+																	appearance="lightweight"
+																	>View Github</fast-anchor
+															>
+															<fast-anchor
+																	slot="links"
+																	class="link"
+																	href="#"
+																	appearance="lightweight"
+																	>Read Documentation</fast-anchor
+															>
+													</x-card>
+													<x-card>
+															<h5 slot="header">02</h5>
+															<h4 slot="header">Design Systems</h4>
+															<p>Use Fluent by default or customize design system properties to make it your own. Or, create your own design system to use with FAST components.</p>
+															<fast-anchor
+																	slot="links"
+																	class="link"
+																	href="#"
+																	appearance="lightweight"
+																	>View Github</fast-anchor
+															>
+															<fast-anchor
+																	slot="links"
+																	class="link"
+																	href="#"
+																	appearance="lightweight"
+																	>Read Documentation</fast-anchor
+															>
+													</x-card>
+													<x-card>
+															<h5 slot="header">03</h5>
+															<h4 slot="header">Technology</h4>
+															<p>Out of the box, FAST components are built on React, but you can build components on any modern framework using the FAST system.</p>
+															<fast-anchor
+																	slot="links"
+																	class="link"
+																	href="#"
+																	appearance="lightweight"
+																	>View Github</fast-anchor
+															>
+															<fast-anchor
+																	slot="links"
+																	class="link"
+																	href="#"
+																	appearance="lightweight"
+																	>Read Documentation</fast-anchor
+															>
+													</x-card>
+													<x-card>
+															<h5 slot="header">04</h5>
+															<h4 slot="header">Web Standards</h4>
+															<p>All FAST components follow WCAG 2.1, are W3C spec-compliant and use the W3C interaction models when available.</p>
+															<fast-anchor
+																	slot="links"
+																	class="link"
+																	href="#"
+																	appearance="lightweight"
+																	>View Github</fast-anchor
+															>
+															<fast-anchor
+																	slot="links"
+																	class="link"
+																	href="#"
+																	appearance="lightweight"
+																	>Read Documentation</fast-anchor
+															>
+													</x-card>
+													<x-card>
+															<h5 slot="header">05</h5>
+															<h4 slot="header">Animation</h4>
+															<p>Design sophisticated animation sequences with the animation library, an interface for the Web Animations API.</p>
+															<fast-anchor
+																	slot="links"
+																	class="link"
+																	href="#"
+																	appearance="lightweight"
+																	>View Github</fast-anchor
+															>
+															<fast-anchor
+																	slot="links"
+																	class="link"
+																	href="#"
+																	appearance="lightweight"
+																	>Read Documentation</fast-anchor
+															>
+													</x-card>
+													<x-card>
+															<h5 slot="header">06</h5>
+															<h4 slot="header">Colors</h4>
+															<p>Create color palettes, extract colors from images, and handle other color operations using our color library.</p>
+															<fast-anchor
+																	slot="links"
+																	class="link"
+																	href="#"
+																	appearance="lightweight"
+																	>View Github</fast-anchor
+															>
+															<fast-anchor
+																	slot="links"
+																	class="link"
+																	href="#"
+																	appearance="lightweight"
+																	>Read Documentation</fast-anchor
+															>
+													</x-card>
+													<x-card>
+															<h5 slot="header">07</h5>
+															<h4 slot="header">Layout / Grid</h4>
+															<p>Build layouts such as a 12 column grid for content or an application grid with resizable panels.</p>
+															<fast-anchor
+																	slot="links"
+																	class="link"
+																	href="#"
+																	appearance="lightweight"
+																	>View Github</fast-anchor
+															>
+															<fast-anchor
+																	slot="links"
+																	class="link"
+																	href="#"
+																	appearance="lightweight"
+																	>Read Documentation</fast-anchor
+															>
+													</x-card>
+													<x-card>
+															<h5 slot="header">08</h5>
+															<h4 slot="header">Other</h4>
+															<p>Leverage a toolkit of general utilities such as keyboarding, Right-To-Left (RTL), number, and string manipulation.</p>
+															<fast-anchor
+																	slot="links"
+																	class="link"
+																	href="#"
+																	appearance="lightweight"
+																	>View Github</fast-anchor
+															>
+															<fast-anchor
+																	slot="links"
+																	class="link"
+																	href="#"
+																	appearance="lightweight"
+																	>Read Documentation</fast-anchor
+															>
+													</x-card>
+											</card-section>
+                        <!-- Documentation components -->
+                    </div>
+                </section>
+                <!-- documentation:end -->
+
+        <section class="section">
+          <div class="section-content">
+            <fast-section-header>
+              <fast-badge slot="badge" class="section-badge">LEARN, MODIFY AND FOLLOW</fast-badge>
+              <p class="section-heading">Join the community</p>
+            </fast-section-header>
+          </div>
+        </section>
+
+        <!-- community:start -->
+        <section class="section">
+          <div class="section-component">
+            Social community components
+          </div>
+        </section>
+        <!-- community:end -->
+
+        <!-- footer:start -->
+          <footer class="footer">
+            <fast-divider></fast-divider>
+            <fast-anchor href="#" appearance="lightweight">Logo</fast-anchor>
+            <div class="footer-links">
+                <div class="footer-link-group">
+                    <span>License</span>
+                    <span>Privacy</span>
+                    <span>Terms of use</span>
+                    <span>&copy; 2020 Microsoft</span>
+                </div>
+                <div class="footer-link-group">
+                  <fast-anchor href="#" appearance="lightweight">Medium</fast-anchor>
+                  <fast-anchor href="#" appearance="lightweight">Github</fast-anchor>
+                </div>
+            </div>
+        </footer>
+        <!-- footer:end -->
+      </div>
+    </fast-design-system-provider>
+  </body>
+</html>
