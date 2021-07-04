@@ -1,0 +1,74 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import { get } from "lodash-es";
+import Foundation, { HandledProps } from "@microsoft/fast-components-foundation-react";
+import { TypographySize, TypographyTag } from "@microsoft/fast-components-react-base";
+import {
+    HeadingAlignBaseline,
+    HeadingHandledProps,
+    HeadingManagedClasses,
+    HeadingUnhandledProps,
+} from "./heading.props";
+import { Typography } from "../typography";
+import {
+    HeadingClassNameContract,
+    ManagedClasses,
+} from "@microsoft/fast-components-class-name-contracts-msft";
+import { DisplayNamePrefix } from "../utilities";
+
+class Heading extends Foundation<HeadingHandledProps, HeadingUnhandledProps, {}> {
+    public static displayName: string = `${DisplayNamePrefix}Heading`;
+
+    protected handledProps: HandledProps<HeadingHandledProps> = {
+        size: void 0,
+        managedClasses: void 0,
+        tag: void 0,
+    };
+
+    /**
+     * Stores HTML tag for use in render
+     */
+    private get tag(): TypographyTag {
+        return this.props.tag ? TypographyTag[this.props.tag] : TypographyTag.h1;
+    }
+
+    /**
+     * Stores size for use in render
+     */
+    private get size(): TypographySize {
+        return TypographySize[`_${this.props.size}`];
+    }
+
+    /**
+     * Renders the component
+     */
+    public render(): React.ReactElement<HTMLHeadingElement | HTMLParagraphElement> {
+        return (
+            <Typography
+                {...this.unhandledProps()}
+                tag={this.tag}
+                size={this.size}
+                className={this.generateClassNames()}
+            >
+                {this.props.children}
+            </Typography>
+        );
+    }
+
+    /**
+     * Generates class names based on props
+     */
+    protected generateClassNames(): string {
+        const classes: string = this.props.size
+            ? get(this.props, `managedClasses.heading__${this.props.size}`, "")
+            : get(this.props, "managedClasses.heading__1", "");
+
+        return super.generateClassNames(
+            `${get(this.props, "managedClasses.heading", "")} ${classes}`
+        );
+    }
+}
+
+export default Heading;
+export * from "./heading.props";
+export { HeadingClassNameContract };
