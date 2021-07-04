@@ -1,0 +1,30 @@
+{
+    "name": "custom-element-test",
+    "version": "1.0.0",
+    "private": true,
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "webpack-dev-server",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/janechu/custom-element-test.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/janechu/custom-element-test/issues"
+    },
+    "homepage": "https://github.com/janechu/custom-element-test#readme",
+    "dependencies": {
+      "@microsoft/fast-components": "^1.4.0",
+      "html-webpack-plugin": "^4.3.0",
+      "lodash-es": "^4.17.15",
+      "webpack": "^4.43.0",
+      "webpack-cli": "^3.3.12",
+      "webpack-dev-server": "^3.11.0"
+    }
+  }
+  

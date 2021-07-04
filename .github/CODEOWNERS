@@ -1,0 +1,62 @@
+# Approval for at least one *code owner* is required all packages.
+
+# Lines starting with '#' are comments.
+# Each line is a file pattern followed by one or more *code owners*.
+# The last matching pattern has the most precendence.
+
+# These *code owners* will be the default owners for everything in the repository.
+* @chrisdholt @janechu @nicholasrice
+
+# File type specific owners
+# Markdown specific files
+*.md @awentzel @chrisdholt @falkicon @EisenbergEffect
+/docs/ @awentzel @chrisdholt @falkicon @EisenbergEffect
+
+# GitHub management
+.github/ @awentzel @janechu @chrisdholt @nicholasrice
+.github/workflows/ @awentzel @chrisdholt @nicholasrice
+
+# Build scripts
+*.yml @awentzel @janechu @nicholasrice @chrisdholt @EisenbergEffect
+build/ @janechu @nicholasrice @chrisdholt @awentzel @EisenbergEffect
+
+# Specifications
+/specs/ @EisenbergEffect @chrisdholt @janechu @nicholasrice
+
+# Sites
+/sites/fast-color-explorer/ @nicholasrice @janechu @bheston
+/sites/fast-component-explorer/ @janechu @nicholasrice
+/sites/website/ @awentzel @chrisdholt @falkicon @EisenbergEffect
+
+# Package specific owners
+
+# React
+/packages/react/fast-components-class-name-contracts-base/ @chrisdholt @janechu @nicholasrice
+/packages/react/fast-components-class-name-contracts-msft/ @chrisdholt @janechu @nicholasrice
+/packages/react/fast-components-foundation-react/ @chrisdholt @janechu @nicholasrice
+/packages/react/fast-components-react-base/ @chrisdholt @janechu @nicholasrice
+/packages/react/fast-components-react-msft/ @chrisdholt @janechu @nicholasrice
+/packages/react/fast-components-styles-msft/ @chrisdholt @janechu @nicholasrice
+/packages/react/fast-jss-manager/ @nicholasrice @janechu @chrisdholt
+/packages/react/fast-jss-manager-react/ @nicholasrice @janechu @chrisdholt
+/packages/react/fast-jss-utilities/ @nicholasrice @janechu @chrisdholt
+/packages/react/fast-layouts-react/ @chrisdholt @nicholasrice
+/packages/react/fast-react-utilities/ @chrisdholt @nicholasrice
+/packages/react/fast-storybook-design-system-addon/ @nicholasrice @chrisdholt @janechu
+/packages/react/fast-storybook-presets/ @nicholasrice @chrisdholt @janechu
+
+# Tooling
+/packages/tooling/fast-figma-plugin-msft/ @nicholasrice @bheston @janechu @EisenbergEffect
+/packages/tooling/fast-tooling-react/ @janechu @nicholasrice @chrisdholt @EisenbergEffect
+/packages/tooling/fast-tooling-wasm/ @janechu @nicholasrice @chrisdholt @EisenbergEffect
+/packages/tooling/fast-tooling/ @janechu @nicholasrice @chrisdholt @EisenbergEffect
+
+# Utilities
+/packages/utilities/fast-animation/ @nicholasrice @chrisdholt
+/packages/utilities/fast-colors/ @nicholasrice @chrisdholt
+/packages/utilities/fast-eslint-rules/ @nicholasrice @janechu @chrisdholt
+/packages/utilities/fast-web-utilities/ @janechu @chrisdholt @nicholasrice
+
+# Web components
+/packages/web-components/fast-element/ @EisenbergEffect @chrisdholt @janechu @nicholasrice
+/packages/web-components/fast-components/ @EisenbergEffect @chrisdholt @janechu @nicholasrice
