@@ -1,0 +1,10 @@
+{
+    "push": {
+      "head": {
+        "ref": "users/awentzel/test-prettier-failure"
+      },
+      "base": {
+        "ref": "users/awentzel/test-prettier-failure"
+      }
+    }
+  }

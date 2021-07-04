@@ -1,0 +1,11 @@
+{
+  "packages": [
+    "packages/**/*",
+    "sites/fast-color-explorer",
+    "sites/fast-component-explorer",
+    "sites/fast-creator"
+  ],
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true
+}
