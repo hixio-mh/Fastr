@@ -1,0 +1,14 @@
+app/
+src/
+www/
+
+#  Tests
+__tests__/
+*.spec.*
+*.test.*
+
+# babel config
+babel.config.js
+tslint.json
+tsconfig.json
+webpack.config.js

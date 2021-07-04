@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Paragraph",
+    "description": "A paragraph component's schema definition.",
+    "type": "object",
+    "id": "paragraph",
+    "properties": {
+        "size": {
+            "title": "Size",
+            "type": "number",
+            "enum": [
+                1,
+                2,
+                3
+            ]
+        }
+    },
+    "reactProperties": {
+        "children": {
+            "title": "Children",
+            "type": "children",
+            "defaults": [
+                "text"
+            ]
+        }
+    }
+}

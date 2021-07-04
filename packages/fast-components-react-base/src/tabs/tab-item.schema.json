@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Tab item",
+    "description": "A tab item component's schema definition.",
+    "type": "object",
+    "id": "tab-item",
+    "properties": {
+        "id": {
+            "title": "Unique ID",
+            "type": "string"
+        },
+        "slot": {
+            "title": "Slot",
+            "type": "string",
+            "default": "tab-item"
+        }
+    },
+    "reactProperties": {
+        "children": {
+            "title": "Children",
+            "type": "children",
+            "ids": [
+                "tab",
+                "tab-panel"
+            ]
+        }
+    },
+    "required": [
+        "id",
+        "slot"
+    ]
+}

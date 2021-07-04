@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "target": "ES6",
+        "baseUrl": ".",
+        "declaration": true,
+        "jsx": "react",
+        "outDir": "./dist"
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.*"
+    ]
+}
