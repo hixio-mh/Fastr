@@ -1,0 +1,30 @@
+# Tests
+dist/**/__test__/
+*.spec.*
+coverage/
+
+# images
+images/
+
+# Source files
+src/
+build/
+
+# config files
+.eslintignore
+.eslintrc.js
+.mocharc.json
+.prettierignore
+.storybook
+api-extractor.json
+karma.conf.js
+rollup.config.js
+tsconfig.build.json
+tsconfig.json
+
+# cache
+.rollupcache
+temp
+
+# Storybook static site
+storybook-static
