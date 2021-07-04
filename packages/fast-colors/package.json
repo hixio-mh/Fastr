@@ -1,0 +1,71 @@
+{
+  "name": "@microsoft/fast-colors",
+  "description": "A color utility for generating a range of colors from a single color",
+  "sideEffects": false,
+  "version": "4.1.1",
+  "author": {
+    "name": "Microsoft",
+    "url": "https://discord.gg/FcSNfg4"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Microsoft/fast-dna.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Microsoft/fast-dna/issues/new/choose"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p ./tsconfig.build.json",
+    "clean:dist": "node ../../build/clean.js dist",
+    "prepare": "npm run clean:dist && npm run build",
+    "prettier": "prettier --config ../../.prettierrc --write \"**/*.ts\"",
+    "prettier:diff": "prettier --config ../../.prettierrc \"**/*.ts\" --list-different",
+    "test": "npm run tslint && npm run unit-tests",
+    "tslint": "tslint -c ./tslint.json '**/*.ts'",
+    "tslint:fix": "tslint -c ./tslint.json --fix '**/*.ts'",
+    "unit-tests": "jest --maxWorkers=2",
+    "unit-tests:watch": "jest --watch",
+    "watch": "npm run build -- -w --preserveWatchOutput"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coveragePathIgnorePatterns": [
+      "pixel-blob.ts"
+    ],
+    "testURL": "http://localhost",
+    "coverageThreshold": {
+      "global": {
+        "statements": 70,
+        "branches": 33,
+        "functions": 69,
+        "lines": 70
+      }
+    },
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@microsoft/fast-tslint-rules": "^3.0.3",
+    "@types/jest": "^24.0.11",
+    "babel-core": "^7.0.0-bridge.0",
+    "jest": "^24.5.0",
+    "prettier": "1.14.3",
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "3.3.3"
+  }
+}
