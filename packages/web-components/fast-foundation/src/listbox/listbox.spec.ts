@@ -1,0 +1,102 @@
+import { DOM } from "@microsoft/fast-element";
+import { assert, expect } from "chai";
+import { fixture } from "../test-utilities/fixture";
+import { ListboxOption } from "../listbox-option/listbox-option";
+import { listboxOptionTemplate as itemTemplate } from "../listbox-option/listbox-option.template";
+import { Listbox, listboxTemplate as template } from "./index";
+
+const FASTListbox = Listbox.compose({
+    baseName: "listbox",
+    template
+})
+
+// TODO: Need to add tests for keyboard handling & focus management
+describe("Listbox", () => {
+    const FASTOption = ListboxOption.compose({
+        baseName: "option",
+        template: itemTemplate
+    })
+
+    async function setup() {
+        const { element, connect, disconnect } = await fixture([FASTListbox(), FASTOption()]);
+
+        const option1 = document.createElement("fast-option");
+        (option1 as ListboxOption).textContent = "option 1";
+
+        const option2 = document.createElement("fast-option");
+        (option2 as ListboxOption).textContent = "option 2";
+
+        const option3 = document.createElement("fast-option");
+        (option3 as ListboxOption).textContent = "option 3";
+
+        element.appendChild(option1);
+        element.appendChild(option2);
+        element.appendChild(option3);
+
+        return { element, connect, disconnect, option1, option2, option3 };
+    }
+
+    it("should have a role of `listbox`", async () => {
+        const { element, connect, disconnect } = await setup();
+
+        await connect();
+
+        expect(element.getAttribute("role")).to.equal("listbox");
+
+        await disconnect();
+    });
+
+    it("should have a tabindex of 0 when `disabled` is not defined", async () => {
+        const { element, connect, disconnect } = await setup();
+
+        await connect();
+
+        expect(element.getAttribute("tabindex")).to.equal("0");
+
+        await disconnect();
+    });
+
+    it("should NOT have a tabindex when `disabled` is defined", async () => {
+        const { element, connect, disconnect } = await setup();
+
+        await connect();
+
+        element.disabled = true;
+
+        await DOM.nextUpdate();
+
+        assert.isNull(element.getAttribute("tabindex"));
+
+        await disconnect();
+    });
+
+    it("should select the first option when no options have the `selected` attribute", async () => {
+        const { element, connect, disconnect, option1, option2, option3 } = await setup();
+
+        await connect();
+
+        expect(element.selectedIndex).to.equal(0);
+
+        expect(element.selectedOptions).to.contain(option1);
+        expect(element.selectedOptions).to.not.contain(option2);
+        expect(element.selectedOptions).to.not.contain(option3);
+
+        await disconnect();
+    });
+
+    it("should select the option with a `selected` attribute", async () => {
+        const { element, connect, disconnect, option1, option2, option3 } = await setup();
+
+        option2.setAttribute("selected", "");
+
+        await connect();
+
+        expect(element.selectedIndex).to.equal(1);
+
+        expect(element.selectedOptions).to.not.contain(option1);
+        expect(element.selectedOptions).to.contain(option2);
+        expect(element.selectedOptions).to.not.contain(option3);
+
+        await disconnect();
+    });
+});
