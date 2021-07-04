@@ -1,0 +1,25 @@
+import { css } from "@microsoft/fast-element";
+import type { ElementStyles } from "@microsoft/fast-element";
+import { display } from "@microsoft/fast-foundation";
+import {
+    neutralDividerRestBehavior,
+    neutralForegroundRestBehavior,
+} from "../styles/recipes";
+
+/**
+ * Styles for the {@link @microsoft/fast-components#FASTAccordion|<fast-accordion>} component.
+ *
+ * @public
+ */
+export const AccordionStyles: ElementStyles = css`
+    ${display("flex")} :host {
+        box-sizing: border-box;
+        flex-direction: column;
+        font-family: var(--body-font);
+        font-size: var(--type-ramp-minus-1-font-size);
+        line-height: var(--type-ramp-minus-1-line-height);
+        color: ${neutralForegroundRestBehavior.var};
+        border-top: calc(var(--outline-width) * 1px) solid
+            ${neutralDividerRestBehavior.var};
+    }
+`.withBehaviors(neutralDividerRestBehavior, neutralForegroundRestBehavior);
