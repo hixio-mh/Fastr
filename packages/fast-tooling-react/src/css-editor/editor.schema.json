@@ -1,0 +1,45 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "CSS Editor",
+    "description": "A CSS editor component's schema definition.",
+    "id": "@microsoft/fast-tooling-react/css-editor",
+    "type": "object",
+    "properties": {
+        "data": {
+            "title": "CSS Values",
+            "type": "object",
+            "properties": {
+                "background": {
+                    "title": "Background",
+                    "type": "string",
+                    "formControlId": "background"
+                },
+                "color": {
+                    "title": "Color",
+                    "type": "string",
+                    "formControlId": "color"
+                },
+                "height": {
+                    "title": "Height",
+                    "type": "string",
+                    "formControlId": "height"
+                },
+                "width": {
+                    "title": "Width",
+                    "type": "string",
+                    "formControlId": "width"
+                },
+                "boxShadow": {
+                    "title": "Shadow",
+                    "type": "string",
+                    "formControlId": "shadow"
+                },
+                "borderRadius": {
+                    "title": "Border radius",
+                    "type": "string",
+                    "formControlId": "borderRadius"
+                }
+            }
+        }
+    }
+}
