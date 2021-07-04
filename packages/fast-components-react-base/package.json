@@ -1,0 +1,126 @@
+{
+  "name": "@microsoft/fast-components-react-base",
+  "description": "FAST base components implemented in React.",
+  "sideEffects": false,
+  "version": "3.1.1",
+  "author": {
+    "name": "Microsoft",
+    "url": "https://discord.gg/FcSNfg4"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Microsoft/fast-dna.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p ./tsconfig.json && npm run copy:all",
+    "build:app": "webpack --progress",
+    "clean:dist": "node ../../build/clean.js dist",
+    "convert:readme": "node ../../build/convert-readme.js .tmp",
+    "copy:all": "npm run copy:json-schema && npm run copy:readme",
+    "copy:json-schema": "node ../../build/copy-schemas.js",
+    "copy:readme": "node ../../build/copy-readme.js",
+    "prepare": "npm run clean:dist && npm run build",
+    "prettier": "prettier --config ../../.prettierrc --write '**/*.{ts,tsx}'",
+    "prettier:diff": "prettier --config ../../.prettierrc '**/*.{ts,tsx}' --list-different",
+    "start": "webpack-dev-server",
+    "test": "npm run convert:readme && npm run tslint && npm run unit-tests && npm run build:app",
+    "tslint": "tslint -c ./tslint.json 'src/**/*.ts{,x}' '**/*.ts{,x}'",
+    "tslint:fix": "tslint -c ./tslint.json --fix 'src/**/*.ts{,x}' '**/*.ts{,x}'",
+    "unit-tests": "jest --maxWorkers=4 --env=jsdom --setupTestFrameworkScriptFile=raf/polyfill",
+    "unit-tests:update": "jest --updateSnapshot",
+    "unit-tests:watch": "jest --watch",
+    "watch": "tsc -p ./tsconfig.json -w --preserveWatchOutput"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "statements": 80,
+        "branches": 80,
+        "functions": 80,
+        "lines": 80
+      }
+    },
+    "coveragePathIgnorePatterns": [
+      "/.tmp/*"
+    ],
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest",
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "!<rootDir>/node_modules/lodash-es"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@microsoft/fast-application-utilities": "^3.0.1",
+    "@microsoft/fast-components-foundation-react": "^2.0.1",
+    "@microsoft/fast-development-site-react": "^3.0.3",
+    "@microsoft/fast-jest-snapshots-react": "^3.0.1",
+    "@microsoft/fast-tslint-rules": "^3.0.0",
+    "@microsoft/fast-web-utilities": "^3.0.1",
+    "@types/jest": "^23.3.5",
+    "@types/lodash-es": "^4.17.0",
+    "@types/node": "^9.4.6",
+    "@types/react": "^16.3.6",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "exenv-es6": "^1.0.0",
+    "glob": "^7.1.2",
+    "html-webpack-plugin": "^3.0.4",
+    "jest": "^23.6.0",
+    "jsdom-global": "^3.0.2",
+    "lodash-es": "^4.0.0",
+    "prettier": "1.14.3",
+    "raf-polyfill": "^1.0.0",
+    "raf-throttle": "^2.0.3",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "react-test-renderer": "^16.3.0",
+    "regenerator-runtime": "^0.11.1",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^23.10.4",
+    "ts-loader": "^4.0.1",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-loader": "^3.6.0",
+    "typescript": "^3.0.1",
+    "utility-types": "^2.1.0",
+    "webpack": "^4.1.0",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.0",
+    "webpack-shell-plugin": "^0.5.0",
+    "yargs": "^11.0.0"
+  },
+  "peerDependencies": {
+    "@microsoft/fast-application-utilities": "^3.0.0",
+    "@microsoft/fast-components-foundation-react": "^2.0.0",
+    "@microsoft/fast-web-utilities": "^3.0.0",
+    "exenv-es6": "^1.0.0",
+    "lodash-es": "^4.0.0",
+    "raf-throttle": "^2.0.3",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
+  },
+  "dependencies": {
+    "@microsoft/fast-components-class-name-contracts-base": "^3.1.0",
+    "utility-types": "^2.1.0"
+  }
+}
