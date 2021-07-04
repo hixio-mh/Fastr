@@ -1,0 +1,34 @@
+{
+  "name": "@microsoft/fast-dna",
+  "description": "Fast, adaptive, secure, and timeless design network architecture.",
+  "version": "1.8.0",
+  "author": {
+    "name": "Microsoft",
+    "url": "https://discord.gg/FcSNfg4"
+  },
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Microsoft/fast-dna.git"
+  },
+  "scripts": {
+    "integration-tests:alpha": "node build/testing/sauce-labs/test-browsers.js alpha",
+    "integration-tests:beta": "node build/testing/sauce-labs/test-browsers.js beta",
+    "integration-tests:release": "node build/testing/sauce-labs/test-browsers.js release"
+  },
+  "devDependencies": {
+    "@types/node": "^9.4.7",
+    "glob": "^7.1.2",
+    "lerna": "^3.3.0",
+    "markdown-it": "^8.4.1",
+    "rimraf": "^2.6.2",
+    "ts-node": "^5.0.1",
+    "typescript": "^3.0.1",
+    "yargs": "^11.0.0"
+  },
+  "dependencies": {
+    "saucelabs": "^1.5.0",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
+}

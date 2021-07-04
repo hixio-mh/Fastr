@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Component with array",
+    "description": "A test component's schema definition.",
+    "type": "object",
+    "id": "arrays",
+    "properties": {
+        "strings": {
+            "title": "Array",
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 2,
+            "maxItems": 5
+        },
+        "objects": {
+            "title": "Array",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "string": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "string"
+                ]
+            }
+        }
+    },
+    "required": [
+        "strings"
+    ]
+}
