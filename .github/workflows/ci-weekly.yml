@@ -1,0 +1,82 @@
+name: CI - FAST Validation
+
+on:
+  schedule:
+  - cron: 0 7 * * 3
+
+
+jobs:
+  build_windows:
+    name: Validate on Windows
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v2.1.0
+      with:
+        node-version: '10'
+
+    - name: Install Lerna
+      run: npm i -g lerna
+
+    - name: Install package dependencies / prepare workspaces
+      env:
+        CHILD_CONCURRENCY: 1
+      run: |
+        yarn install --frozen-lockfile
+
+    - name: Ensure Prettier formatting
+      run: lerna run prettier:diff
+
+    - name: Execute unit tests
+      run: lerna run test --stream
+
+  
+  build_macos:
+    name: Validate on MacOS
+    
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v2.1.0
+      with:
+        node-version: '10'
+
+    - name: Install Lerna
+      run: sudo yarn global add lerna 
+
+    - name: Install package dependencies / prepare workspaces
+      run: yarn install --frozen-lockfile
+
+    - name: Ensure Prettier formatting
+      run: lerna run prettier:diff
+
+    - name: Execute unit tests
+      run: lerna run test --stream
+
+  code_scan:
+    name: Validate Security
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 2
+        
+    - run: git checkout HEAD^2
+      if: ${{ github.event_name == 'pull_request' }}
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v1
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
