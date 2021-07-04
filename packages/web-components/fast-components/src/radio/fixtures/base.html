@@ -1,0 +1,39 @@
+<h1>Radio</h1>
+
+<h2>Defaults</h2>
+<fast-radio></fast-radio>
+<div>
+    <fast-radio>label</fast-radio>
+</div>
+
+<h2>Checked</h2>
+<fast-radio id="thecheckedone" value="checked" checked></fast-radio>
+
+<!-- Required -->
+<h2>Required</h2>
+<fast-radio id="uncheckedone" value="required" required></fast-radio>
+
+<!-- Disabled -->
+<h2>Disabled</h2>
+<fast-radio disabled></fast-radio>
+<fast-radio disabled>label</fast-radio>
+<fast-radio disabled checked id="anotherCheckedOne">checked</fast-radio>
+
+<h2>Aria</h2>
+<fast-radio>
+    Labeled by content
+</fast-radio>
+
+<div style="display: flex; flex-direction: column; margin-top: 12px;">
+    <h3 id="externallabel">External label</h3>
+    <fast-radio aria-labeledby="externallabel">
+        Content not used as aria label
+    </fast-radio>
+</div>
+
+<div style="display: flex; flex-direction: column; margin-top: 12px;">
+    <h3 id="label1">Aria label attribute specified</h3>
+    <fast-radio aria-label="label specified by attribute">
+        Content not used as aria label
+    </fast-radio>
+</div>
