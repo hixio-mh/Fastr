@@ -1,0 +1,95 @@
+{
+  "name": "@microsoft/fast-markdown-msft-react",
+  "description": "Converter for markdown files to JSX as a string which can be embedded in a site",
+  "sideEffects": false,
+  "version": "3.0.24",
+  "author": {
+    "name": "Microsoft",
+    "url": "https://discord.gg/FcSNfg4"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Microsoft/fast-dna.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Microsoft/fast-dna/issues/new/choose"
+  },
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p ./tsconfig.json",
+    "clean:dist": "node ../../build/clean.js dist",
+    "prepare": "npm run clean:dist && npm run build",
+    "prettier": "prettier --config ../../.prettierrc --write \"**/*.{ts,tsx}\"",
+    "prettier:diff": "prettier --config ../../.prettierrc \"**/*.{ts,tsx}\" --list-different",
+    "test": "npm run tslint && npm run unit-tests",
+    "tslint": "tslint -c tslint.json '**/*.ts{,x}'",
+    "tslint:fix": "tslint -c tslint.json '**/*.ts{,x}' --fix",
+    "unit-tests": "jest --maxWorkers=2",
+    "unit-tests:watch": "jest --watch && npm-watch",
+    "watch": "npm run build -- -w --preserveWatchOutput"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "statements": 100,
+        "branches": 93,
+        "functions": 100,
+        "lines": 100
+      }
+    },
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.ts$": "ts-jest",
+      "^.+\\.js$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "!<rootDir>/node_modules/lodash-es",
+      "node_modules/jss-*",
+      "node_modules/css-vendor"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js|ts)$"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@microsoft/fast-components-react-base": "^3.11.1",
+    "@microsoft/fast-components-react-msft": "^3.13.1",
+    "@microsoft/fast-jest-snapshots-react": "^3.1.4",
+    "@microsoft/fast-tslint-rules": "^3.0.2",
+    "@types/jest": "^24.0.11",
+    "@types/markdown-it": "0.0.4",
+    "@types/node": "^9.4.6",
+    "@types/react": "^16.3.6",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.5.0",
+    "jest": "^24.5.0",
+    "lodash-es": "^4.0.0",
+    "prettier": "1.14.3",
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^3.0.1",
+    "watch": "^1.0.2"
+  },
+  "peerDependencies": {
+    "@microsoft/fast-components-react-base": "^3.0.0",
+    "@microsoft/fast-components-react-msft": "^3.0.0",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
+  },
+  "dependencies": {
+    "markdown-it": "^8.4.0"
+  }
+}
