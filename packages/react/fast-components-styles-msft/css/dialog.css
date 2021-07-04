@@ -1,0 +1,37 @@
+.dialog {
+  display: none;
+}
+.dialog[aria-hidden="false"] {
+  display: block;
+}
+.dialog_positioningRegion {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  position: fixed;
+  overflow: auto;
+  justify-content: center;
+}
+.dialog_modalOverlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.3);
+}
+.dialog_contentRegion {
+  z-index: 1;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #FFFFFF;
+  border-radius: 4px;
+  box-shadow: 0px 25.6px 57.6px rgba(0,0,0,0.13), 0px 0px 16.4px rgba(0,0,0,0.11);
+}
+@media (-ms-high-contrast:active) {
+  .dialog_contentRegion {
+    border: 1px solid WindowText;
+  }
+}

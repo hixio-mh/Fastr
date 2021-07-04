@@ -1,0 +1,81 @@
+import { DesignSystem, DesignSystemResolver } from "../../design-system";
+import { accentPalette, backgroundColor, neutralPalette } from "../design-system";
+import { findClosestSwatchIndex, isDarkMode, Palette, swatchByContrast } from "./palette";
+import { ColorRecipe, colorRecipeFactory, Swatch, SwatchResolver } from "./common";
+import { accentFillRest } from "./accent-fill";
+
+const targetRatio: number = 3.5;
+
+function neutralFocusIndexResolver(
+    referenceColor: string,
+    palette: Palette,
+    designSystem: DesignSystem
+): number {
+    return findClosestSwatchIndex(neutralPalette, referenceColor)(designSystem);
+}
+
+function neutralFocusDirectionResolver(
+    index: number,
+    palette: Palette,
+    designSystem: DesignSystem
+): 1 | -1 {
+    return isDarkMode(designSystem) ? -1 : 1;
+}
+
+function neutralFocusContrastCondition(contrastRatio: number): boolean {
+    return contrastRatio > targetRatio;
+}
+
+const neutralFocusAlgorithm: SwatchResolver = swatchByContrast(backgroundColor)(
+    neutralPalette
+)(neutralFocusIndexResolver)(neutralFocusDirectionResolver)(
+    neutralFocusContrastCondition
+);
+
+export const neutralFocus: ColorRecipe<Swatch> = colorRecipeFactory(
+    neutralFocusAlgorithm
+);
+
+export const neutralFocusCustomProperty = "var(--neutral-focus)";
+export const neutralFocusDefinition = {
+    name: "neutral-focus",
+    value: neutralFocus,
+};
+
+function neutralFocusInnerAccentIndexResolver(
+    accentFillColor: DesignSystemResolver<string>
+): (
+    referenceColor: string,
+    sourcePalette: Palette,
+    designSystem: DesignSystem
+) => number {
+    return (
+        referenceColor: string,
+        sourcePalette: Palette,
+        designSystem: DesignSystem
+    ): number => {
+        return sourcePalette.indexOf(accentFillColor(designSystem));
+    };
+}
+
+function neutralFocusInnerAccentDirectionResolver(
+    referenceIndex: number,
+    palette: string[],
+    designSystem: DesignSystem
+): 1 | -1 {
+    return isDarkMode(designSystem) ? 1 : -1;
+}
+
+export function neutralFocusInnerAccent(
+    accentFillColor: DesignSystemResolver<string>
+): DesignSystemResolver<string> {
+    return swatchByContrast(neutralFocus)(accentPalette)(
+        neutralFocusInnerAccentIndexResolver(accentFillColor)
+    )(neutralFocusInnerAccentDirectionResolver)(neutralFocusContrastCondition);
+}
+
+export const neutralFocusInnerAccentCustomProperty = "var(--neutral-focus-inner-accent)";
+export const neutralFocusInnerAccentDefinition = {
+    name: "neutral-focus-inner-accent",
+    value: neutralFocusInnerAccent(accentFillRest),
+};

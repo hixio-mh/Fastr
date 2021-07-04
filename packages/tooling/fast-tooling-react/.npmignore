@@ -1,0 +1,19 @@
+# App files
+app/
+
+# Source files
+src/
+
+# Tests
+__tests__/
+coverage/
+*.spec.*
+*.test.*
+
+# Config files
+.prettierignore
+tslint.json
+babel.config.js
+tsconfig.build.json
+tsconfig.json
+webpack.config.js

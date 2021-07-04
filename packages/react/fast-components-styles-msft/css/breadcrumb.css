@@ -1,0 +1,29 @@
+.breadcrumb {
+  color: var(--neutral-foreground-rest);
+  cursor: default;
+  font-size: 14px;
+  line-height: 20px;
+}
+.breadcrumb_item {
+  display: inline;
+  outline: none;
+  transition: all 0.2s ease-in-out, border none;
+  text-decoration: none;
+}
+.breadcrumb_item:link, .breadcrumb_item:visited {
+  border-bottom: 0px;
+}
+.breadcrumb_itemsContainer {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0;
+  padding-right: ;
+}
+.breadcrumb_separator {
+  color: var(--neutral-foreground-hint);
+  cursor: default;
+  margin: 0 6px;
+  display: inline-block;
+}

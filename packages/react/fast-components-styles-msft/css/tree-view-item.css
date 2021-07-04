@@ -1,0 +1,165 @@
+.treeViewItem {
+  color: var(--neutral-foreground-rest);
+  cursor: pointer;
+  position: relative;
+  background: var(--neutral-fill-stealth-rest);
+}
+.treeViewItem:focus {
+  outline: none;
+}
+body:not(:global(.js-focus-visible)) .treeViewItem:focus > .treeViewItem_contentRegion, :global(.js-focus-visible) .treeViewItem:global(.focus-visible) > .treeViewItem_contentRegion, global(.js-focus-visible) [data-focus-visible-added].treeViewItem > .treeViewItem_contentRegion {
+  border: 2px solid var(--neutral-focus);
+}
+.treeViewItem .treeViewItem_beforeContent, .treeViewItem .treeViewItem_afterContent {
+  fill: var(--neutral-foreground-rest);
+  width: 16px;
+  height: 16px;
+}
+@media (-ms-high-contrast:active) {
+  .treeViewItem .treeViewItem_beforeContent, .treeViewItem .treeViewItem_afterContent {
+    fill: ButtonText;
+  }
+}
+@media (-ms-high-contrast:active) {
+  body:not(:global(.js-focus-visible)) .treeViewItem:focus > .treeViewItem_contentRegion, :global(.js-focus-visible) .treeViewItem:global(.focus-visible) > .treeViewItem_contentRegion, global(.js-focus-visible) [data-focus-visible-added].treeViewItem > .treeViewItem_contentRegion {
+    border-color: ButtonText !important;
+    box-shadow: 0 0 0 2px inset ButtonFace;
+  }
+}
+.treeViewItem_beforeContent {
+  margin-right: 12px;
+  margin-left: ;
+}
+.treeViewItem_afterContent {
+  margin-left: 12px;
+  margin-right: ;
+}
+.treeViewItem_contentRegion {
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  height: 32px;
+  border: 2px solid transparent;
+  border-radius: 2px;
+}
+.treeViewItem_contentRegion:hover {
+  background: var(--neutral-fill-stealth-hover);
+}
+.treeViewItem_contentRegion:active {
+  background: var(--neutral-fill-stealth-active);
+}
+.treeViewItem_contentRegion::before {
+  width: 0;
+  content: '';
+  display: block;
+  flex-shrink: 0;
+}
+@media (-ms-high-contrast:active) {
+  .treeViewItem_contentRegion {
+    color: ButtonText;
+    -ms-high-contrast-adjust: none;
+    border: 2px solid transparent;
+  }
+}
+@media (-ms-high-contrast:active) {
+  .treeViewItem_contentRegion:hover {
+    fill: HighlightText;
+    color: HighlightText;
+    background: Highlight;
+  }
+}
+@media (-ms-high-contrast:active) {
+  .treeViewItem_contentRegion:hover .treeViewItem_expandCollapseGlyph, .treeViewItem_contentRegion:hover .treeViewItem_beforeContent, .treeViewItem_contentRegion:hover .treeViewItem_afterContent {
+    fill: HighlightText;
+  }
+}
+.treeViewItem_innerContentRegion {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  margin-left: 10px;
+  margin-right: ;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+.treeViewItem_childNodeRegion {
+  display: none;
+  font-size: calc(1em + 20px);
+}
+.treeViewItem_childNodeRegion .treeViewItem_contentRegion::before {
+  width: 1em;
+}
+.treeViewItem_expandCollapseButton {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  display: flex;
+  background: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+.treeViewItem_expandCollapseGlyph {
+  fill: var(--neutral-foreground-rest);
+  transition: transform .1s linear;
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  transform: rotate(-45deg);
+}
+@media (-ms-high-contrast:active) {
+  .treeViewItem_expandCollapseGlyph {
+    fill: ButtonText;
+  }
+}
+.treeViewItem__expanded > .treeViewItem_contentRegion .treeViewItem_expandCollapseGlyph {
+  transform: rotate(0deg);
+}
+.treeViewItem__expanded > .treeViewItem_childNodeRegion {
+  display: block;
+}
+.treeViewItem__selected > .treeViewItem_contentRegion {
+  background: var(--neutral-fill-stealth-selected);
+}
+.treeViewItem__selected::after {
+  width: 3px;
+  content: '';
+  display: block;
+  position: absolute;
+  background: var(--accent-foreground-rest);
+  top: 6px;
+  height: 20px;
+  left: 2px;
+  right: unset;
+  border-radius: 2px;
+}
+@media (-ms-high-contrast:active) {
+  .treeViewItem__selected > .treeViewItem_contentRegion .treeViewItem_beforeContent, .treeViewItem__selected .treeViewItem_afterContent, .treeViewItem__selected > .treeViewItem_contentRegion .treeViewItem_expandCollapseGlyph {
+    fill: HighlightText;
+  }
+}
+@media (-ms-high-contrast:active) {
+  .treeViewItem__selected::after {
+    background: HighlightText;
+  }
+}
+@media (-ms-high-contrast:active) {
+  .treeViewItem__selected > .treeViewItem_contentRegion {
+    fill: HighlightText;
+    color: HighlightText;
+    background: Highlight;
+  }
+}
+.treeViewItem__nested .treeViewItem_innerContentRegion {
+  position: relative;
+  margin-left: 32px;
+  margin-right: ;
+}
+.treeViewItem__nested .treeViewItem_expandCollapseButton {
+  position: absolute;
+  left: -32px;
+  right: ;
+}

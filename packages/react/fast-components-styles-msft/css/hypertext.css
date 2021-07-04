@@ -1,0 +1,48 @@
+.hypertext {
+  color: var(--neutral-foreground-rest);
+  outline: none;
+  transition: all 0.2s ease-in-out, border 0.03s ease-in-out;
+  text-decoration: none;
+}
+.hypertext:link, .hypertext:visited {
+  color: var(--accent-foreground-rest);
+  border-bottom: 1px solid var(--accent-foreground-rest);
+}
+@media (-ms-high-contrast:active) {
+  .hypertext {
+    color: WindowText;
+    -ms-high-contrast-adjust: none;
+  }
+}
+.hypertext:link:hover, .hypertext:visited:hover {
+  color: var(--accent-foreground-hover);
+  border-bottom-color: var(--accent-foreground-hover);
+}
+.hypertext:link:active, .hypertext:visited:active {
+  color: var(--accent-foreground-active);
+  border-bottom-color: var(--accent-foreground-active);
+}
+.hypertext:link:focus, .hypertext:visited:focus {
+  outline: none;
+}
+body:not(:global(.js-focus-visible)) .hypertext:link:focus, :global(.js-focus-visible) .hypertext:link:global(.focus-visible), global(.js-focus-visible) [data-focus-visible-added].hypertext:link, body:not(:global(.js-focus-visible)) .hypertext:visited:focus, :global(.js-focus-visible) .hypertext:visited:global(.focus-visible), global(.js-focus-visible) [data-focus-visible-added].hypertext:visited {
+  border-bottom: 2px solid var(--neutral-focus);
+}
+@media (-ms-high-contrast:active) {
+  .hypertext:link, .hypertext:visited {
+    color: -ms-hotlight !important;
+    border-bottom-color: -ms-hotlight !important;
+  }
+}
+@media (-ms-high-contrast:active) {
+  body:not(:global(.js-focus-visible)) .hypertext:link:focus, :global(.js-focus-visible) .hypertext:link:global(.focus-visible), global(.js-focus-visible) [data-focus-visible-added].hypertext:link, body:not(:global(.js-focus-visible)) .hypertext:visited:focus, :global(.js-focus-visible) .hypertext:visited:global(.focus-visible), global(.js-focus-visible) [data-focus-visible-added].hypertext:visited {
+    color: -ms-hotlight !important;
+    border-bottom-color: -ms-hotlight !important;
+  }
+}
+@media (-ms-high-contrast:active) {
+  .hypertext:link:hover, .hypertext:visited:hover {
+    color: -ms-hotlight !important;
+    border-bottom-color: -ms-hotlight !important;
+  }
+}

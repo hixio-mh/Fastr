@@ -1,0 +1,17 @@
+.label {
+  color: var(--neutral-foreground-rest);
+  display: inline-block;
+  padding: 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+.label__hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+}

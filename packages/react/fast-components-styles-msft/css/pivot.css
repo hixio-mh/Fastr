@@ -1,0 +1,120 @@
+.pivot {
+  color: var(--neutral-foreground-rest);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+@media (-ms-high-contrast:active) {
+  .pivot {
+    -ms-high-contrast-adjust: none;
+  }
+}
+.pivot_tabList {
+  display: flex;
+  box-sizing: border-box;
+}
+.pivot_tab {
+  color: var(--neutral-foreground-rest);
+  cursor: pointer;
+  display: flex;
+  box-sizing: border-box;
+  white-space: nowrap;
+  align-items: center;
+  user-select: none;
+  height: 32px;
+  padding: 0 10px;
+  border: 2px solid transparent;
+  border-radius: 2px;
+}
+.pivot_tab:hover {
+  color: var(--neutral-foreground-hover);
+}
+.pivot_tab:active {
+  color: var(--neutral-foreground-active);
+}
+.pivot_tab:focus {
+  outline: none;
+}
+body:not(:global(.js-focus-visible)) .pivot_tab:focus, :global(.js-focus-visible) .pivot_tab:global(.focus-visible), global(.js-focus-visible) [data-focus-visible-added].pivot_tab {
+  border-color: var(--neutral-focus);
+}
+@media (-ms-high-contrast:active) {
+  .pivot_tab {
+    fill: ButtonText !important;
+    color: ButtonText !important;
+  }
+}
+@media (-ms-high-contrast:active) {
+  body:not(:global(.js-focus-visible)) .pivot_tab:focus, :global(.js-focus-visible) .pivot_tab:global(.focus-visible), global(.js-focus-visible) [data-focus-visible-added].pivot_tab {
+    border-color: ButtonText;
+  }
+}
+@media (-ms-high-contrast:active) {
+  .pivot_tab:hover {
+    fill: ButtonText !important;
+    color: ButtonText !important;
+  }
+}
+@media (-ms-high-contrast:active) {
+  .pivot_tab__active {
+    fill: ButtonText !important;
+    color: ButtonText !important;
+  }
+}
+.pivot_tabContent {
+  top: -2px;
+  position: relative;
+  font-size: 14px;
+  line-height: 20px;
+}
+.pivot_activeIndicator {
+  left: -10px;
+  width: 20px;
+  height: 3px;
+  display: block;
+  position: absolute;
+  transition: 0.2s ease-in-out;
+  background: var(--accent-fill-rest);
+  border-radius: 2px;
+  top: 27px;
+}
+@media (-ms-high-contrast:active) {
+  .pivot_activeIndicator {
+    background: Highlight;
+  }
+}
+.pivot_tabPanel {
+  display: block;
+}
+.pivot_tabPanel__hidden {
+  display: none;
+}
+.pivot_tabPanels {
+  animation-timing-function: cubic-bezier(0.4, 0.0, 0.6, 1.0);
+}
+.pivot_tabPanels__animatePrevious {
+  animation: fromLeft 0.2s;
+}
+.pivot_tabPanels__animateNext {
+  animation: fromRight 0.2s;
+}
+@keyframes fromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

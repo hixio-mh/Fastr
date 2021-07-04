@@ -1,0 +1,15 @@
+.image {
+  margin: 0;
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
+.image__picture {
+  display: block;
+}
+.image_img {
+  margin: 0;
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
