@@ -1,0 +1,64 @@
+{
+  "name": "@microsoft/fast-jest-snapshots-react",
+  "description": "A small utility for automating Jest snapshot creation of React components",
+  "sideEffects": false,
+  "version": "3.0.1",
+  "author": {
+    "name": "Microsoft",
+    "url": "https://discord.gg/FcSNfg4"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Microsoft/fast-dna.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Microsoft/fast-dna/issues/new/choose"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p ./tsconfig.json",
+    "prepare": "npm run build",
+    "prettier": "prettier --config ../../.prettierrc --write '**/*.{ts,tsx}'",
+    "prettier:diff": "prettier --config ../../.prettierrc '**/*.{ts,tsx}' --list-different",
+    "start": "webpack-dev-server",
+    "test": "npm run tslint",
+    "tslint": "tslint -c ./tslint.json '**/*.ts{,x}'",
+    "tslint:fix": "tslint -c ./tslint.json --fix '**/*.ts{,x}'",
+    "watch": "npm run build -- -w --preserveWatchOutput"
+  },
+  "jest": {
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest",
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ]
+  },
+  "devDependencies": {
+    "@microsoft/fast-tslint-rules": "^3.0.0",
+    "@types/jest": "^23.3.5",
+    "@types/react": "^16.3.6",
+    "jest": "^23.6.0",
+    "prettier": "1.14.3",
+    "react": "^16.5.2",
+    "ts-jest": "^23.10.4",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^3.0.1"
+  },
+  "dependencies": {
+    "react-test-renderer": "^16.3.0"
+  },
+  "peerDependencies": {
+    "jest": "^22.0.0 || ^23.0.0",
+    "react": "^16.3.0"
+  }
+}
