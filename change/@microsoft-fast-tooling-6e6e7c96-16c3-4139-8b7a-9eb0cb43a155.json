@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "reworked anchored region, removed updateAnchorOffset fn from api",
+  "packageName": "@microsoft/fast-tooling",
+  "email": "scomea@microsoft.com",
+  "dependentChangeType": "patch"
+}
