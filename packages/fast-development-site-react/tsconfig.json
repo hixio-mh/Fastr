@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "declaration": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "outDir": "./dist",
+        "sourceMap": true,
+        "target": "es6",
+        "jsx": "react"
+    },
+    "include": [
+        "src/**/*"
+    ]
+  }
