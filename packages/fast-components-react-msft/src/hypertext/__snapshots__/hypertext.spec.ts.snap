@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`hypertext Hypertext: 0 1`] = `
+<a
+  className="hypertext-0-1-1"
+  data-sketch-symbol="Hypertext"
+  href="https://msdn.microsoft.com"
+>
+  Hypertext
+</a>
+`;
+
+exports[`hypertext Hypertext: 1 1`] = `
+<a
+  className="hypertext-0-1-2"
+>
+  Hypertext
+</a>
+`;

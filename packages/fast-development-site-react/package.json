@@ -1,0 +1,70 @@
+{
+  "name": "@microsoft/fast-development-site-react",
+  "description": "FAST development testing site for React",
+  "sideEffects": false,
+  "version": "1.8.0",
+  "author": {
+    "name": "Microsoft",
+    "url": "https://discord.gg/FcSNfg4"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Microsoft/fast-dna.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean:dist": "node ../../build/clean.js dist",
+    "convert:readme": "node ../../build/convert-readme.js --src=app/**/README.md .tmp",
+    "build:app": "webpack --progress",
+    "prepare": "npm run clean:dist && tsc -p ./tsconfig.json",
+    "start": "webpack-dev-server --progress",
+    "test": "npm run convert:readme && npm run tslint && npm run build:app",
+    "tslint": "tslint -c ./tslint.json '**/*.ts{,x}'",
+    "tslint:fix": "tslint -c ./tslint.json --fix '**/*.ts{,x}'"
+  },
+  "dependencies": {
+    "@microsoft/fast-application-utilities": "^1.8.0",
+    "@microsoft/fast-form-generator-react": "^1.8.0",
+    "@microsoft/fast-glyphs-msft": "^1.8.0",
+    "@microsoft/fast-jss-manager-react": "^1.8.0",
+    "@microsoft/fast-jss-utilities": "^1.8.0",
+    "@microsoft/fast-layouts-react": "^1.8.0",
+    "react-syntax-highlighter": "^7.0.4"
+  },
+  "devDependencies": {
+    "@microsoft/fast-components-class-name-contracts-base": "^1.8.0",
+    "@microsoft/fast-jss-manager": "^1.8.0",
+    "@microsoft/fast-tslint-rules": "^1.8.0",
+    "@polymer/polymer": "^3.0.0-pre.10",
+    "@types/lodash-es": "^4.17.0",
+    "@types/node": "^9.6.7",
+    "@types/polymer": "^1.2.3",
+    "@types/react": "^16.3.6",
+    "@types/react-router": "^4.0.0",
+    "fork-ts-checker-webpack-plugin": "^0.4.1",
+    "html-webpack-plugin": "^3.0.4",
+    "lodash-es": "^4.0.0",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "react-router-dom": "^4.2.2",
+    "rimraf": "^2.6.2",
+    "ts-loader": "^4.0.0",
+    "tslint": "^5.9.1",
+    "tslint-loader": "^3.6.0",
+    "tslint-react": "^3.5.1",
+    "typescript": "^2.7.2",
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.11",
+    "webpack-dev-server": "^3.1.0",
+    "webpack-shell-plugin": "^0.5.0",
+    "yargs": "^11.0.0"
+  },
+  "peerDependencies": {
+    "lodash-es": "^4.0.0",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "react-router-dom": "^4.0.0"
+  }
+}

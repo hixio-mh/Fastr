@@ -1,0 +1,36 @@
+{
+  "name": "@microsoft/fast-glyphs-msft",
+  "description": "Microsoft SVG Glyphs",
+  "sideEffects": false,
+  "version": "1.8.0",
+  "author": {
+    "name": "Microsoft",
+    "url": "https://discord.gg/FcSNfg4"
+  },
+  "license": "MIT",
+  "keywords": [
+    "svg",
+    "icons",
+    "glyphs"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "clean:dist": "node ../../build/clean.js dist",
+    "prepare": "npm run clean:dist && ts-node ./src/index.ts",
+    "test": "npm run tslint",
+    "tslint": "tslint -c ./tslint.json '**/*.ts'",
+    "tslint:fix": "tslint -c ./tslint.json --fix '**/*.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Microsoft/fast-dna.git"
+  },
+  "homepage": "https://github.com/Microsoft/fast-tslint-rules#readme",
+  "devDependencies": {
+    "@microsoft/fast-tslint-rules": "^1.8.0",
+    "@types/node": "^9.6.2",
+    "ts-node": "^5.0.1",
+    "tslint": "^5.9.1",
+    "typescript": "^2.8.1"
+  }
+}
