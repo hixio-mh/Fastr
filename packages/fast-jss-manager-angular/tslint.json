@@ -1,0 +1,16 @@
+{
+    "extends": [
+        "@microsoft/fast-tslint-rules",
+        "tslint-config-prettier"
+    ],
+    "compilerOptions": {
+        "experimentalDecorators": true
+    },
+    "linterOptions": {
+        "exclude": [
+            "node_modules/**",
+            "build/**",
+            "dist/**"
+        ]
+    }
+}
